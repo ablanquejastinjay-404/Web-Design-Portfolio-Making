@@ -1,0 +1,149 @@
+/* Reset styles for all elements */
+* {
+  margin: 0; /* remove default margin */
+  padding: 0; /* remove default padding */
+  box-sizing: border-box; /* include border & padding in element’s total size */
+  font-family: Arial, sans-serif; /* set global font */
+}
+
+/* Body styling */
+body {
+  line-height: 1.6; /* improves readability */
+  color: #fff; /* default text color: white */
+  background: url("background.png") no-repeat center center fixed; /* set background image, fixed */
+  background-size: cover; /* make background cover the screen */
+  position: relative; /* allow ::before overlay positioning */
+}
+
+/* Dark transparent overlay on top of background image */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* black overlay with 80% opacity */
+  z-index: -1; /* keeps it behind all content */
+}
+
+/* Navigation bar */
+nav {
+  display: flex; /* use flexbox for layout */
+  color: #ffffff; /* text color */
+  justify-content: space-between; /* space between logo and menu */
+  align-items: center; /* vertically center items */
+  background: #1a1a1a; /* dark gray background */
+  padding: 15px 50px; /* inner spacing */
+  border-bottom: 5px solid #687285; /* bottom border accent */
+}
+
+/* Logo in nav */
+nav .logo {
+  font-size: 22px; /* slightly larger text */
+  font-weight: bold; /* make bold */
+}
+
+/* Nav menu list */
+nav ul {
+  display: flex; /* horizontal list */
+  list-style: none; /* remove bullet points */
+}
+
+/* Space between nav items */
+nav ul li {
+  margin-left: 20px;
+}
+
+/* Nav links */
+nav ul li a {
+  text-decoration: none; /* remove underline */
+  color: #ffffff; /* white text */
+  font-weight: bold; /* bold text */
+}
+
+/* About section */
+.about {
+  display: flex; /* side-by-side layout */
+  align-items: center; /* vertically center */
+  justify-content: space-between; /* space between text and image */
+  padding: 60px 10%; /* spacing around */
+}
+
+/* About text container */
+.about-text {
+  flex: 1; /* take available space */
+  padding-right: 20px; /* space between text and image */
+}
+
+/* About section heading */
+.about-text h2 {
+  margin-bottom: 15px; /* spacing below heading */
+}
+
+/* About section paragraph */
+.about-text p {
+  margin-bottom: 20px; /* spacing between paragraphs */
+}
+
+/* About section image */
+.about img {
+  max-width: 300px; /* limit size */
+  border-radius: 10px; /* rounded corners */
+}
+
+/* Button style */
+.btn {
+  display: inline-block; /* allow padding */
+  padding: 10px 20px;
+  background: #3d5a6b; /* dark teal color */
+  color: #ffffff;
+  text-decoration: none; /* remove underline */
+  border-radius: 5px; /* rounded corners */
+}
+
+/* Gallery section */
+.gallery {
+  padding: 50px 10%; /* spacing around */
+  text-align: center; /* center text */
+}
+
+/* Gallery heading */
+.gallery h2 {
+  margin-bottom: 30px;
+}
+
+/* Gallery grid layout */
+.gallery-grid {
+  display: grid; /* use CSS Grid */
+  grid-template-columns: repeat(3, auto); /* always 3 columns */
+  grid-template-rows: repeat(3, auto);   /* 3 rows */
+  gap: 10px; /* spacing between items */
+  justify-items: center; /* center images inside */
+  justify-content: center; /* center images content inside */
+}
+
+/* Gallery images (general style) */
+.gallery-grid img {
+  width: 100%; /* fill grid cell */
+  max-width: 400px; /* limit size */
+  height: 400px; /* fixed height */
+  object-fit: cover; /* crop image neatly */
+  border-radius: 8px; /* rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
+}
+
+/* Hover effect for gallery images */
+.gallery-grid img:hover {
+  transform: scale(1.05); /* zoom slightly */
+  box-shadow: 0 8px 50px rgba(255, 255, 255, 0.3); /* glowing shadow */
+}
+
+/* Footer */
+footer {
+  background: #0f0f0f; /* dark background */
+  color: #fff; /* white text */
+  text-align: center; /* center text */
+  padding: 20px; /* inner spacing */
+  margin-top: 40px; /* space above */
+}
